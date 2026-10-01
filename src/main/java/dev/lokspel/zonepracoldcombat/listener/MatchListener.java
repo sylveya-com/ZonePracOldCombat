@@ -1,7 +1,6 @@
 package dev.lokspel.zonepracoldcombat.listener;
 
 import dev.lokspel.zonepracoldcombat.config.ConfigManager;
-import dev.lokspel.zonepracoldcombat.util.LadderResolver;
 import dev.nandi0813.api.Event.Match.MatchEndEvent;
 import dev.nandi0813.api.Event.Match.MatchRoundStartEvent;
 import dev.nandi0813.api.Event.Match.MatchStartEvent;
@@ -23,14 +22,11 @@ public final class MatchListener implements Listener {
 
     private final OldCombatMechanicsAPI ocmApi;
     private final ConfigManager configManager;
-    private final LadderResolver ladderResolver;
     private final JavaPlugin plugin;
 
-    public MatchListener(OldCombatMechanicsAPI ocmApi, ConfigManager configManager,
-                         LadderResolver ladderResolver, JavaPlugin plugin) {
+    public MatchListener(OldCombatMechanicsAPI ocmApi, ConfigManager configManager, JavaPlugin plugin) {
         this.ocmApi = ocmApi;
         this.configManager = configManager;
-        this.ladderResolver = ladderResolver;
         this.plugin = plugin;
     }
 
@@ -71,7 +67,7 @@ public final class MatchListener implements Listener {
         }
         players.forEach(ocmApi::clearAllModuleOverridesForPlayer);
 
-        String ladder = ladderResolver.resolve(match);
+        String ladder = match.getLadderName();
         if (ladder == null) {
             return;
         }

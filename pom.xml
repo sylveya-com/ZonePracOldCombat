@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>dev.lokspel</groupId>
   <artifactId>ZonePracOldCombat</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
   <name>ZonePracOldCombat</name>
 
@@ -14,9 +14,9 @@
 
     <!-- Runtime dependencies -->
     <bukkit.version>1.13.1-R0.1-SNAPSHOT</bukkit.version>
-    <zpp.version>2.1.0</zpp.version>
-    <zpp.plugin.version>7.8.0-dev-202-90f79a3</zpp.plugin.version>
-    <ocm.version>2.5.1</ocm.version>
+    <zpp.version>2.4.0</zpp.version>
+    <zpp.plugin.version>7.8.3-dev-39-a0522f2</zpp.plugin.version>
+    <ocm.version>2.6.0</ocm.version>
 
     <!-- Build tooling -->
     <compiler.version>3.13.0</compiler.version>
@@ -28,6 +28,10 @@
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
     </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io/</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -38,12 +42,11 @@
       <version>${bukkit.version}</version>
       <scope>provided</scope>
     </dependency>
+    <!-- API -->
     <dependency>
-      <groupId>dev.nandi0813</groupId>
+      <groupId>com.github.sylveya</groupId>
       <artifactId>ZonePracticePro-Api</artifactId>
       <version>${zpp.version}</version>
-      <scope>system</scope>
-      <systemPath>${project.basedir}/libs/ZonePracticePro-Api-${zpp.version}.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>dev.nandi0813</groupId>
